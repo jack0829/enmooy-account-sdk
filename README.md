@@ -13,7 +13,7 @@ package main
 
 import (
     "fmt"
-    sdk "gitlab.enmooy.com/rd/account/sdk/jwt"
+    sdk "github.com/jack0829/enmooy-account-sdk/jwt"
 )
 
 var (
