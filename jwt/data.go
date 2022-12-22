@@ -5,9 +5,10 @@ import "github.com/speps/go-hashids/v2"
 type Data struct {
 	Uid    string   `json:"uid"`
 	Eid    string   `json:"eid"`
-	Nick   string   `json:"nick"`
-	Avatar string   `json:"avatar"`
-	Svc    []string `json:"svc"`
+	Nick   string   `json:"nick,omitempty"`
+	Avatar string   `json:"avatar,omitempty"`
+	Svc    []string `json:"svc,omitempty"`
+	Roles  []int    `json:"roles,omitempty"`
 }
 
 func NewDataWithEncoder(encoder *hashids.HashID, uid, eid int, svc ...string) *Data {
@@ -29,6 +30,11 @@ func (d *Data) WithNick(n string) *Data {
 
 func (d *Data) WithAvatar(a string) *Data {
 	d.Avatar = a
+	return d
+}
+
+func (d *Data) WithRoles(roles ...int) *Data {
+	d.Roles = roles
 	return d
 }
 

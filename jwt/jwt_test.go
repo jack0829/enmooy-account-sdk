@@ -11,13 +11,14 @@ func TestJWT(t *testing.T) {
 
 	// 生成 JWT
 	{
-		uid := 123
-		eid := 456
+		uid := 4331
+		eid := 28
 		svc := []string{"oss", "slb"}
 		nick := "abc"
 		avatar := "xx.jpg"
+		roles := []int{101, 1001}
 
-		data := NewDataWithEncoder(NewEncoder(salt), uid, eid, svc...).WithNick(nick).WithAvatar(avatar)
+		data := NewDataWithEncoder(NewEncoder(salt), uid, eid, svc...).WithNick(nick).WithAvatar(avatar).WithRoles(roles...)
 		j1 := New(key, salt).WithData(data)
 
 		s = j1.Encode()
