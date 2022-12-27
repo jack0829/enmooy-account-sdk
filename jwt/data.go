@@ -9,6 +9,7 @@ type Data struct {
 	Avatar string   `json:"avatar,omitempty"`
 	Svc    []string `json:"svc,omitempty"`
 	Roles  []int    `json:"roles,omitempty"`
+	Client string   `json:"clt,omitempty"`
 }
 
 func NewDataWithEncoder(encoder *hashids.HashID, uid, eid int, svc ...string) *Data {
@@ -35,6 +36,11 @@ func (d *Data) WithAvatar(a string) *Data {
 
 func (d *Data) WithRoles(roles ...int) *Data {
 	d.Roles = roles
+	return d
+}
+
+func (d *Data) WithClient(clientType string) *Data {
+	d.Client = clientType
 	return d
 }
 

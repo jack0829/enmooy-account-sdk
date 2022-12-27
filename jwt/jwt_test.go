@@ -18,7 +18,7 @@ func TestJWT(t *testing.T) {
 		avatar := "xx.jpg"
 		roles := []int{101, 1001}
 
-		data := NewDataWithEncoder(NewEncoder(salt), uid, eid, svc...).WithNick(nick).WithAvatar(avatar).WithRoles(roles...)
+		data := NewDataWithEncoder(NewEncoder(salt), uid, eid, svc...).WithNick(nick).WithAvatar(avatar).WithRoles(roles...).WithClient("web")
 		j1 := New(key, salt).WithData(data)
 
 		s = j1.Encode()

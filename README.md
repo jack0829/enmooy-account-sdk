@@ -28,7 +28,7 @@ var (
 func main() {
 
     // 请求中的 token
-    token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2dpbiIsImV4cCI6MTY3MTI1Mzc0MiwiaWF0IjoxNjcwOTk0NTQyLCJkYXRhIjp7InVpZCI6IncxeWVWN1k3Uk9LbGc5T0UiLCJlaWQiOiJlbzQyTG1LcXFWS0pxOGI5IiwibmljayI6ImFiYyIsImF2YXRhciI6Inh4LmpwZyIsInN2YyI6WyJvc3MiLCJzbGIiXX19.tgLmrY0N1RFzEum8xo6lWVJyuFW2XeTldfjBlHaM2qE"
+    token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2dpbiIsImV4cCI6MTY3MjM5MTI3NSwiaWF0IjoxNjcyMTMyMDc1LCJkYXRhIjp7InVpZCI6Im93cDBxWWtxeXBOT2JMUE0iLCJlaWQiOiJYa2piNnpZckJZWk80ODFvIiwibmljayI6ImFiYyIsImF2YXRhciI6Inh4LmpwZyIsInN2YyI6WyJvc3MiLCJzbGIiXSwicm9sZXMiOlsxMDEsMTAwMV0sImNsdCI6IndlYiJ9fQ.raiFShfJrb5qYSCFJGOr1yR-7IS5RLJtdUY2AKdz1wA"
     
     jwt := sdk.New(key, salt)
     if err := jwt.Decode(token); err != nil {
@@ -53,8 +53,8 @@ func main() {
 如果一切没有错误，将会输出：
 
 ``` log
-加密后数据 &jwt.Data{Uid:"w1yeV7Y7ROKlg9OE", Eid:"eo42LmKqqVKJq8b9", Nick:"abc", Avatar:"xx.jpg", Svc:[]string{"oss", "slb"}}
-原始用户ID = 123
-原始企业ID = 456
+加密后数据 &jwt.Data{Uid:"owp0qYkqypNObLPM", Eid:"Xkjb6zYrBYZO481o", Nick:"abc", Avatar:"xx.jpg", Svc:[]string{"oss", "slb"}, Roles:[]int{101, 1001}, Client:"web"}
+原始用户ID = 4331
+原始企业ID = 28
 ```
 
